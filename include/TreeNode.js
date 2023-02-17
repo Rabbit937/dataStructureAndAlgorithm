@@ -5,9 +5,9 @@ class TreeNode {
     height;
     constructor(val, left, right, height) {
         this.val = (val === undefined ? 0 : val);
-        this.left = (val === undefined ? null : left);
-        this.right = (val === undefined ? null : right);
-        this.height = (val === undefined ? 0 : height)
+        this.left = (left === undefined ? null : left);
+        this.right = (right === undefined ? null : right);
+        this.height = (height === undefined ? 0 : height)
     }
 }
 
@@ -28,7 +28,7 @@ function arrToTree(arr) {
             queue.push(node.left)
         }
 
-        if (++1 >= arr.length) break;
+        if (++i >= arr.length) break;
         if (arr[i] !== null) {
             node.right = new TreeNode(arr[i])
             queue.push(node.right)
